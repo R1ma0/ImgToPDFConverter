@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="WindowIcon">
+    <file>icons/imageEdit.png</file>
+  </qresource>
+</RCC>
