@@ -1,5 +1,4 @@
-"""
-"""
+""" This file contains the view class of the main window """
 
 
 
@@ -9,15 +8,14 @@ from View.MainWindowUI import Ui_MainWindow
 
 
 class MainWindowView(QtWidgets.QMainWindow):
-    """
-    docstring
-    """
-    def __init__(self, controller, model):
-        """
-        """
+    """ Main window view methods """
+    def __init__(self, controller):
+        """ UI & Controller initizization """
         super(MainWindowView, self).__init__()
-        self.controller = controller
-        self.model = model
+        self.controller = controller            # Controller init
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        self.ui.actionOpen_Image.triggered.connect(self.controller.OpenImage)
+
