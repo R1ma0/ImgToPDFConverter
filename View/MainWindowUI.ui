@@ -37,34 +37,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QFrame" name="frame">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(221, 221, 221);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="imageToPdf">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>981</width>
-           <height>571</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QListWidget" name="listWidget"/>
     </item>
    </layout>
   </widget>
@@ -87,15 +60,7 @@
     <addaction name="actionOpen_Image"/>
     <addaction name="actionExport_to_PDF"/>
    </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionProgramm"/>
-    <addaction name="actionDocumentation"/>
-   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="font">
@@ -155,7 +120,7 @@
   </action>
   <action name="actionOpen_Image">
    <property name="text">
-    <string>Open Image</string>
+    <string>Open</string>
    </property>
   </action>
  </widget>

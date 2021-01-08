@@ -17,5 +17,5 @@ class MainWindowView(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.actionOpen_Image.triggered.connect(self.controller.OpenImage)
+        self.ui.actionOpen_Image.triggered.connect(self.controller.OpenFileNames)
 
