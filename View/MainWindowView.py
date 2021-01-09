@@ -17,5 +17,12 @@ class MainWindowView(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.actionOpen_Image.triggered.connect(self.controller.OpenFileNames)
+        # Uplad file names
+        self.ui.actionOpen_Image.triggered.connect(self.controller.openFileNames)
 
+        # Export files to PDF
+        self.ui.actionExport_to_PDF.triggered.connect(self.controller.exportToPDF)
+
+        # Clear list view
+        self.ui.actionClear.triggered.connect(self.controller.clearFileNames)
+        

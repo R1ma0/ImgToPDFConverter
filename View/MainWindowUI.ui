@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>PDFConverter</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../Source/icons/icons.qrc">
+    <normaloff>:/all_icons/logo.svg</normaloff>:/all_icons/logo.svg</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
@@ -37,7 +41,41 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QListWidget" name="listWidget"/>
+     <widget class="QListWidget" name="listWidget">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>true</bool>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::NoDragDrop</enum>
+      </property>
+      <property name="defaultDropAction">
+       <enum>Qt::MoveAction</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -47,26 +85,51 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(221, 221, 221);</string>
    </property>
    <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>File</string>
     </property>
     <addaction name="actionOpen_Image"/>
     <addaction name="actionExport_to_PDF"/>
    </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionClear"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuTools"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="font">
     <font>
      <family>Times New Roman</family>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -114,16 +177,74 @@
    </property>
   </action>
   <action name="actionExport_to_PDF">
+   <property name="icon">
+    <iconset resource="../Source/icons/icons.qrc">
+     <normaloff>:/all_icons/export.svg</normaloff>:/all_icons/export.svg</iconset>
+   </property>
    <property name="text">
     <string>Export To PDF</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
   </action>
   <action name="actionOpen_Image">
+   <property name="icon">
+    <iconset resource="../Source/icons/icons.qrc">
+     <normaloff>:/all_icons/open.svg</normaloff>:/all_icons/open.svg</iconset>
+   </property>
    <property name="text">
     <string>Open</string>
    </property>
+   <property name="toolTip">
+    <string>Open file from storage</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="../Source/icons/icons.qrc">
+     <normaloff>:/all_icons/clear.svg</normaloff>:/all_icons/clear.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Source/icons/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

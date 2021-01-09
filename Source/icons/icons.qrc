@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="all_icons">
+    <file>clear.svg</file>
+    <file>export.svg</file>
+    <file>logo.svg</file>
+    <file>open.svg</file>
+  </qresource>
+</RCC>

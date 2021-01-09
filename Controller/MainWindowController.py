@@ -2,7 +2,6 @@
 
 
 
-from Model.OpenFile import UploadFileNames
 from View.MainWindowView import MainWindowView
 
 
@@ -14,14 +13,30 @@ class MainWindowController(object):
         self.model = model                              # Model init
         self.view = MainWindowView(self)                # View init
         self.view.show()                                # View showing
-        self.ufn = UploadFileNames(self.view)
-        self.fileNames = []
+        self.fileNames = []                             # Uploaded file names
 
-    def OpenFileNames(self):
-        """ Uploadd file names from disk """
-        self.fileNames = self.ufn.Load()
-        self.ShowOpenFileNames(self.fileNames)
+    def openFileNames(self):
+        """ Upload file names from storage """
+        self.fileNames = self.model.uploadFileNames(self.view)
+        self.showOpenFileNames(self.fileNames)
 
-    def ShowOpenFileNames(self, fileNames):
+    def showOpenFileNames(self, fileNames):
+        """ Display file names in QListWidget """
         self.view.ui.listWidget.addItems(fileNames)
-        
+
+    def exportToPDF(self):
+        """ Export a list of files to PDF format """
+        if self.fileNames:
+            result = self.model.savePDF(self.view, self.fileNames)
+            self.view.ui.statusbar.showMessage(result)
+        else:
+            result = "Select files to export"
+            self.view.ui.statusbar.showMessage(result)
+
+    def clearFileNames(self):
+        """  """
+        if self.fileNames:
+            self.fileNames.clear()
+            self.view.ui.listWidget.clear()
+            message = "File list cleared"
+            self.view.ui.statusbar.showMessage(message)
